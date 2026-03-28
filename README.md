@@ -13,8 +13,28 @@ A collection of [Claude Skills](https://docs.anthropic.com/en/docs/claude-code/s
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
 - [JBang](https://www.jbang.dev/) installed
 - Camel CLI installed via JBang: `jbang app install camel@apache/camel`
-- [Camel MCP server](https://github.com/apache/camel-mcp-server) configured in your project (`.mcp.json`)
+- [Camel MCP server](https://camel.apache.org/blog/2026/02/camel-jbang-mcp/) configured in your project (`.mcp.json`)
 - (Optional) [Kaoto Visual Editor](https://kaoto.io/) for visual route editing
+
+## Configure the Camel MCP Server
+
+Claude Code supports MCP servers through its configuration file. Add the following to your project's `.mcp.json` (or `~/.claude/mcp.json` for global configuration):
+
+```json
+{
+  "mcpServers": {
+    "camel": {
+      "command": "jbang",
+      "args": [
+        "-Dquarkus.log.level=WARN",
+        "org.apache.camel:camel-jbang-mcp:4.18.0:runner"
+      ]
+    }
+  }
+}
+```
+
+After saving this file, Claude Code will automatically start the MCP server and make all 11 tools available during your session.
 
 ## How to Install
 
