@@ -51,10 +51,10 @@ Copy the skill folder to your `.claude/skills/` project directory:
 
 ```bash
 # Clone the repository
-git clone https://github.com/zbendhib/camel-developer-skills.git
+git clone https://github.com/zbendhib/camel-route-developer.git
 
 # Copy to your global skills directory
-cp -r camel-developer-skills/camel-route-developer ~/.claude/skills/
+cp -r camel-route-developer/camel-route-developer ~/.claude/skills/
 ```
 
 ## How to Use It?
